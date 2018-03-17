@@ -29,8 +29,6 @@ namespace ConsoleApp1
             return result[target];
         }
 
-
-
     }
 
 }
