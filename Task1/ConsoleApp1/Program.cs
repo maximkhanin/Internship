@@ -10,12 +10,11 @@ namespace ConsoleApp1
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine(Solution());
+            Console.WriteLine(Solution(new int[] { 1, 2, 5, 10, 20, 50, 100, 200 }));
         }
 
-        public static int Solution(int target = 200)
+        public static int Solution(int[] coinValues, int target = 200)
         {
-            var coinValues = new int[] { 1, 2, 5, 10, 20, 50, 100, 200 };
             var result = new int[target + 1];
             result[0] = 1;
 
