@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -10,25 +6,33 @@ namespace ConsoleApp1
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine(Solution(new int[] { 1, 2, 5, 10, 20, 50, 100, 200 }));
-        }
+            int target = 200;
+            int ways = 0;
 
-        public static int Solution(int[] coinValues, int target = 200)
-        {
-            var result = new int[target + 1];
-            result[0] = 1;
-
-            for (int i = 0; i < coinValues.Length; i++)
+            for (int a = target; a >= 0; a -= 200)
             {
-                for (int j = coinValues[i]; j <= target; j++)
+                for (int b = a; b >= 0; b -= 100)
                 {
-                    result[j] += result[j - coinValues[i]];
+                    for (int c = b; c >= 0; c -= 50)
+                    {
+                        for (int d = c; d >= 0; d -= 20)
+                        {
+                            for (int e = d; e >= 0; e -= 10)
+                            {
+                                for (int f = e; f >= 0; f -= 5)
+                                {
+                                    for (int g = f; g >= 0; g -= 2)
+                                    {
+                                        ways++;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
-            return result[target];
+            Console.WriteLine(ways);
         }
-
     }
-
 }
